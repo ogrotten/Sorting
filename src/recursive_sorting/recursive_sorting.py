@@ -1,6 +1,5 @@
 arr = [3,22,17,1,40,8,31,137, 12, 4, 19, 20, 2, 9]
 
-print(arr.first)
 # print(len(arr),len(arr)//2)
 # print(arr[:len(arr)//2])
 # print(arr[len(arr)//2:])
@@ -12,7 +11,24 @@ def merge( first, last ):
 	# # TO-DO
 	combined = []
 	put = None
+	while len(first) > 0 and len(last) > 0:
+		if first[0] < last[0]:
+			combined.append(first[0])
+			del first[0]
+		else:
+			combined.append(last[0])
+			del last[0]
 
+	if len(first):
+		combined.append(first[0])
+		del first[0]
+	elif len(last):
+		combined.append(last[0])
+		del last[0]
+	else:
+		print("Necessary?")
+
+	print(combined)
 
 	return combined
 
@@ -20,15 +36,19 @@ def merge( first, last ):
 # TO-DO: implement the Merge Sort function below USING RECURSION
 def merge_sort( arr ):
 
+	half = arr[:len(arr)//2]
+
 	if len(arr) == 1:
 		return arr
+		# print(arr, end = " ")
 
 	first = merge_sort(arr[:len(arr)//2])
 	last = merge_sort(arr[len(arr)//2:])
 
-	done = merge(first, last)
-	print(50,done)
-	return done
+	# print(28, arr)
+
+	# print(merge(first, last))
+	return merge(first, last)
 
 merge_sort(arr)
 
