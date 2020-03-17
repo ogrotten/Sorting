@@ -1,33 +1,34 @@
 arr = [3,22,17,1,40,8,31,137, 12, 4, 19, 20, 2, 9]
 
-print(len(arr),len(arr)//2)
-print(arr[:len(arr)//2])
-print(arr[len(arr)//2:])
+print(arr.first)
+# print(len(arr),len(arr)//2)
+# print(arr[:len(arr)//2])
+# print(arr[len(arr)//2:])
 
 # TO-DO: complete the helpe function below to merge 2 sorted arrays
-def merge( arrA, arrB ):
-	elements = len( arrA ) + len( arrB )
-	merged_arr = [0] * elements
-	# TO-DO
-	
-	return merged_arr
+def merge( first, last ):
+	# elements = len( arrA ) + len( arrB )
+	# merged_arr = [0] * elements
+	# # TO-DO
+	combined = []
+	put = None
+
+
+	return combined
 
 
 # TO-DO: implement the Merge Sort function below USING RECURSION
 def merge_sort( arr ):
 
-	half = arr[:len(arr)//2]
-
 	if len(arr) == 1:
 		return arr
-		# print(arr, end = " ")
 
 	first = merge_sort(arr[:len(arr)//2])
 	last = merge_sort(arr[len(arr)//2:])
 
-	print(arr)
-
-	return arr
+	done = merge(first, last)
+	print(50,done)
+	return done
 
 merge_sort(arr)
 
