@@ -1,9 +1,5 @@
 arr = [3,22,17,1,40,8,31,137, 12, 4, 19, 20, 2, 9]
 
-# print(len(arr),len(arr)//2)
-# print(arr[:len(arr)//2])
-# print(arr[len(arr)//2:])
-
 # TO-DO: complete the helpe function below to merge 2 sorted arrays
 def merge( first, last ):
 	# elements = len( arrA ) + len( arrB )
@@ -25,10 +21,6 @@ def merge( first, last ):
 	elif len(last):
 		combined.append(last[0])
 		del last[0]
-	else:
-		print("Necessary?")
-
-	print(combined)
 
 	return combined
 
@@ -40,14 +32,10 @@ def merge_sort( arr ):
 
 	if len(arr) == 1:
 		return arr
-		# print(arr, end = " ")
 
 	first = merge_sort(arr[:len(arr)//2])
 	last = merge_sort(arr[len(arr)//2:])
 
-	# print(28, arr)
-
-	# print(merge(first, last))
 	return merge(first, last)
 
 merge_sort(arr)
