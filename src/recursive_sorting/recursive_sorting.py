@@ -1,4 +1,5 @@
 arr = [3,22,17,1,40,8,31,137, 12, 4, 19, 20, 2, 9]
+#		  -	      -                       -
 
 # TO-DO: complete the helpe function below to merge 2 sorted arrays
 def merge( first, last ):
@@ -16,10 +17,10 @@ def merge( first, last ):
 			del last[0]
 
 	if len(first):
-		combined.append(first[0])
+		combined.extend(first)
 		del first[0]
 	elif len(last):
-		combined.append(last[0])
+		combined.extend(last)
 		del last[0]
 
 	return combined
@@ -28,9 +29,9 @@ def merge( first, last ):
 # TO-DO: implement the Merge Sort function below USING RECURSION
 def merge_sort( arr ):
 
-	half = arr[:len(arr)//2]
+	# half = arr[len(arr)//2]
 
-	if len(arr) == 1:
+	if len(arr) <= 1:
 		return arr
 
 	first = merge_sort(arr[:len(arr)//2])
@@ -38,7 +39,8 @@ def merge_sort( arr ):
 
 	return merge(first, last)
 
-merge_sort(arr)
+# print(len(arr))
+# print(len(merge_sort(arr)))
 
 # STRETCH: implement an in-place merge sort algorithm
 def merge_in_place(arr, start, mid, end):
